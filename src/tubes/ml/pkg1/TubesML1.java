@@ -32,7 +32,7 @@ public class TubesML1 {
         int trainNum,testNum;
 
         /***dataset 1***/
-        fileReader tets = new fileReader("E:\\Kuli Ah\\Sem 7 2016-2017\\IF 4071\\Tubes-ML-1\\src\\data\\iris.arff");
+        fileReader tets = new fileReader("./src/data/iris.arff");
         try {
             tets.read();
         } catch (IOException ex) {
@@ -97,7 +97,7 @@ public class TubesML1 {
         
         
         /*dataset 2*/
-        tets.setFilepath("E:\\Kuli Ah\\Sem 7 2016-2017\\IF 4071\\Tubes-ML-1\\src\\data\\weather.arff");
+        tets.setFilepath("./src/data/weather.arff");
         try {
             tets.read();
         } catch (IOException ex) {
