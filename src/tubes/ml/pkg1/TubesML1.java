@@ -20,14 +20,10 @@ import weka.filters.supervised.attribute.Discretize;
 /**
  * @author Alriana
  */
-public class TubesML1 {
+public class TubesML1{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws Exception {
+    public void akses() throws Exception{
         Discretize filter;
-        // TODO code application logic here
         int fold = 10;
         int fold3 = 3;
         int trainNum,testNum;
@@ -237,5 +233,15 @@ public class TubesML1 {
         file.println("RESULT");
         file.println( jKT.toString() );
         file.close();
+    }
+    
+    /**
+     * @param args the command line arguments
+     * @throws java.lang.Exception
+     */
+    public static void main(String[] args) throws Exception {
+        TubesML1 testCase1 = new TubesML1();
+        testCase1.akses();
+        
     }
 }
