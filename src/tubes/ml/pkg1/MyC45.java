@@ -4,19 +4,16 @@
  * and open the template in the editor.
  */
 package tubes.ml.pkg1;
+import weka.classifiers.trees.J48;
 import weka.core.Instances;
-import weka.classifiers.trees.Id3;
-import weka.classifiers.*;
 /**
  *
  * @author Alriana
  */
-public class MyID3 extends weka.classifiers.trees.Id3{
-
+public class MyC45 extends weka.classifiers.trees.J48{
     @Override
     public void buildClassifier(Instances i) throws Exception {
          //To change body of generated methods, choose Tools | Templates.
         throw new UnsupportedOperationException("Not supported yet.");      
     }
-    
 }
