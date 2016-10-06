@@ -18,12 +18,26 @@ import java.io.IOException;
  */
 public class fileReader {
    
+    String filepath;
+    public fileReader(String _filepath){
+        filepath=_filepath;
+    }
+    Instances data;
+    
+    public void setFilepath(String _filepath){
+        filepath = _filepath;
+    }
    public void read() throws FileNotFoundException, IOException{
        
-       String filename = "./src/data/weather.nominal.arff";
-       BufferedReader reader = new BufferedReader(new FileReader(filename));
+       BufferedReader reader = new BufferedReader(new FileReader(filepath));
        
-       Instances data = new Instances(reader);
+       data = new Instances(reader);
        reader.close();
+       
+       data.setClassIndex(data.numAttributes()-1);
+   }
+   
+   public Instances getData(){
+       return data;
    }
 }
