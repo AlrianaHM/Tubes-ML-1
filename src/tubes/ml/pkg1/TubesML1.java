@@ -15,6 +15,7 @@ import weka.classifiers.trees.Id3;
 import weka.classifiers.Evaluation;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.Discretize;
+import weka.filters.supervised.instance.Resample;
 
 /**
  * @author Alriana
@@ -56,8 +57,8 @@ public class TubesML1 {
         for (int i = 0; i <fold;i++){
             try {
                 
-                Instances train = discreteData.trainCV(trainNum, i);
-                Instances test = discreteData.testCV(testNum, i);
+                Instances train = discreteData.trainCV(fold, i);
+                Instances test = discreteData.testCV(fold, i);
             
                 Id3 iTiga = new Id3();
                 Evaluation validation = new Evaluation(train);
@@ -78,8 +79,8 @@ public class TubesML1 {
         testNum = data.numInstances()/4;
         J48 jKT = new J48();
         for (int i = 0; i <fold;i++){
-            Instances train = data.trainCV(trainNum, i);
-            Instances test = data.testCV(testNum, i);         
+            Instances train = data.trainCV(fold, i);
+            Instances test = data.testCV(fold, i);         
             try {
                 Evaluation validation = new Evaluation(train);
                 try {
@@ -111,11 +112,11 @@ public class TubesML1 {
         testNum = discreteData.numInstances()/4;
         
         
-        for (int i = 0; i <fold3;i++){
+        for (int i = 0; i <fold;i++){
             try {
                 
-                Instances train = discreteData.trainCV(trainNum, i);
-                Instances test = discreteData.testCV(testNum, i);
+                Instances train = discreteData.trainCV(fold, i);
+                Instances test = discreteData.testCV(fold, i);
             
                 Id3 iTiga = new Id3();
                 Evaluation validation = new Evaluation(train);
@@ -136,9 +137,9 @@ public class TubesML1 {
         trainNum = data.numInstances()*3/4;
         testNum = data.numInstances()/4;
         
-        for (int i = 0; i <fold3;i++){
-            Instances train = data.trainCV(trainNum, i);
-            Instances test = data.testCV(testNum, i);
+        for (int i = 0; i <fold;i++){
+            Instances train = data.trainCV(fold, i);
+            Instances test = data.testCV(fold, i);
             try {
                 Evaluation validation = new Evaluation(train);
                 try {
